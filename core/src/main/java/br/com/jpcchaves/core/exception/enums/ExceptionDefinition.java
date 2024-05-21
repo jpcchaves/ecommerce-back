@@ -1,7 +1,11 @@
 package br.com.jpcchaves.core.exception.enums;
 
 public enum ExceptionDefinition {
-  USR0001("The field must have less than 50 characters", "TD-0001", HttpStatus.BAD_REQUEST.value());
+  USR0001("The field must have less than 50 characters", "TD-0001", HttpStatus.BAD_REQUEST.value()),
+  USR0002("The field cannot be empty or null", "USR-0002", HttpStatus.BAD_REQUEST.value()),
+  USR0003("The password must contain 8 or more characters", "USR-0003", HttpStatus.BAD_REQUEST.value()),
+  USR0004("User cannot be null!", "USR-0004", HttpStatus.BAD_REQUEST.value()),
+  GEN0001("Empty or invalid email!", "GEN-0001", HttpStatus.BAD_REQUEST.value());
   private final String message;
   private final String code;
   private final int httpStatus;
