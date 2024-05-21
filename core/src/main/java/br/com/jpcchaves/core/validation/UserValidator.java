@@ -1,6 +1,6 @@
 package br.com.jpcchaves.core.validation;
 
-import br.com.jpcchaves.core.domain.User;
+import br.com.jpcchaves.core.model.User;
 import br.com.jpcchaves.core.exception.UserException;
 import br.com.jpcchaves.core.exception.enums.ExceptionDefinition;
 
