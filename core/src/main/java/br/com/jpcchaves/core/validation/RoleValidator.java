@@ -1,6 +1,6 @@
 package br.com.jpcchaves.core.validation;
 
-import br.com.jpcchaves.core.domain.Role;
+import br.com.jpcchaves.core.model.Role;
 import br.com.jpcchaves.core.exception.RoleException;
 import br.com.jpcchaves.core.exception.enums.ExceptionDefinition;
 

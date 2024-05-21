@@ -1,4 +1,4 @@
-package br.com.jpcchaves.core.domain;
+package br.com.jpcchaves.core.model;
 
 import java.time.LocalDateTime;
 
