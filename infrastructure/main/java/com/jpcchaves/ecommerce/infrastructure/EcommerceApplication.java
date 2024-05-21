@@ -1,4 +1,4 @@
-package com.jpcchaves.ecommerce;
+package com.jpcchaves.ecommerce.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
