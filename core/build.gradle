@@ -2,8 +2,13 @@ plugins {
     id 'java'
 }
 
+<<<<<<< HEAD
 group = 'com.ecommerce'
 version = '1.0-SNAPSHOT'
+=======
+group = 'br.com.jpcchaves'
+version = '0.0.1-SNAPSHOT'
+>>>>>>> 0d25cec (add build gradle files)
 
 repositories {
     mavenCentral()
