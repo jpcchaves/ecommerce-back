@@ -1,8 +1,8 @@
 package br.com.jpcchaves.core.validation;
 
-import br.com.jpcchaves.core.model.User;
 import br.com.jpcchaves.core.exception.UserException;
 import br.com.jpcchaves.core.exception.enums.ExceptionDefinition;
+import br.com.jpcchaves.core.model.User;
 
 public class UserValidator implements Validator<User> {
   private static final int MAX_LENGTH = 50;
@@ -15,11 +15,11 @@ public class UserValidator implements Validator<User> {
       throw new UserException(ExceptionDefinition.USR0004);
     }
 
-    validateNotBlank(entity.getUsername());
-    validateNotBlank(entity.getEmail());
-    validateNotBlank(entity.getFirstName());
-    validateNotBlank(entity.getLastName());
-    validateNotBlank(entity.getPassword());
+    ValidationUtil.notBlank(entity.getUsername(), "username");
+    ValidationUtil.notBlank(entity.getEmail(), "email");
+    ValidationUtil.notBlank(entity.getFirstName(), "first name");
+    ValidationUtil.notBlank(entity.getLastName(), "last name");
+    ValidationUtil.notBlank(entity.getPassword(), "password");
 
     validateMaxLength(entity.getUsername(), MAX_LENGTH);
     validateMaxLength(entity.getFirstName(), MAX_LENGTH);
@@ -34,11 +34,6 @@ public class UserValidator implements Validator<User> {
     }
   }
 
-  private void validateNotBlank(String value) {
-    if (value == null || value.isBlank()) {
-      throw new UserException(ExceptionDefinition.USR0001);
-    }
-  }
 
   private void validateMaxLength(String value, int maxLength) {
     if (value.length() > maxLength) {
