@@ -11,10 +11,10 @@ import java.util.UUID;
 public class Order {
   private UUID id;
   private Client client;
-  private LocalDateTime orderDate;
   private OrderStatus status = OrderStatus.RECEIVED;
   private List<OrderItem> orderItems = new ArrayList<>();
   private BigInteger totalPrice = BigInteger.ZERO;
+  private LocalDateTime orderDate;
 
   public Order() {}
 
