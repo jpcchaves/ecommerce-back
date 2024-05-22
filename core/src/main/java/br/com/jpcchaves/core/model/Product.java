@@ -1,10 +1,11 @@
 package br.com.jpcchaves.core.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Product {
+public class Product extends Auditable<Long> {
   private UUID id;
   private String name;
   private String description;
@@ -13,11 +14,58 @@ public class Product {
   private ProductCategory category;
   private Integer stock;
 
-  public Product() {
+  public Product() {}
+
+  public Product(
+      UUID id,
+      String name,
+      String description,
+      String shortDescription,
+      BigDecimal price,
+      ProductCategory category,
+      Integer stock) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.shortDescription = shortDescription;
+    this.price = price;
+    this.category = category;
+    this.stock = stock;
   }
 
-  public Product(UUID id, String name, String description, String shortDescription,
-      BigDecimal price, ProductCategory category, Integer stock) {
+  public Product(
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      UUID id,
+      String name,
+      String description,
+      String shortDescription,
+      BigDecimal price,
+      ProductCategory category,
+      Integer stock) {
+    super(createdDate, lastModifiedDate);
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.shortDescription = shortDescription;
+    this.price = price;
+    this.category = category;
+    this.stock = stock;
+  }
+
+  public Product(
+      Long createdBy,
+      Long lastModifiedBy,
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      UUID id,
+      String name,
+      String description,
+      String shortDescription,
+      BigDecimal price,
+      ProductCategory category,
+      Integer stock) {
+    super(createdBy, lastModifiedBy, createdDate, lastModifiedDate);
     this.id = id;
     this.name = name;
     this.description = description;
@@ -85,25 +133,17 @@ public class Product {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
     Product product = (Product) o;
 
-    if (!id.equals(product.id))
-      return false;
-    if (!Objects.equals(name, product.name))
-      return false;
-    if (!Objects.equals(description, product.description))
-      return false;
-    if (!Objects.equals(shortDescription, product.shortDescription))
-      return false;
-    if (!Objects.equals(price, product.price))
-      return false;
-    if (!Objects.equals(category, product.category))
-      return false;
+    if (!id.equals(product.id)) return false;
+    if (!Objects.equals(name, product.name)) return false;
+    if (!Objects.equals(description, product.description)) return false;
+    if (!Objects.equals(shortDescription, product.shortDescription)) return false;
+    if (!Objects.equals(price, product.price)) return false;
+    if (!Objects.equals(category, product.category)) return false;
     return Objects.equals(stock, product.stock);
   }
 
