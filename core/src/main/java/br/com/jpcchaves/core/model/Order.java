@@ -1,6 +1,7 @@
 package br.com.jpcchaves.core.model;
 
 import br.com.jpcchaves.core.model.Enum.OrderStatus;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,24 +10,27 @@ import java.util.UUID;
 
 public class Order {
   private UUID id;
-  private User client;
+  private Client client;
   private LocalDateTime orderDate;
   private OrderStatus status = OrderStatus.RECEIVED;
   private List<OrderItem> orderItems = new ArrayList<>();
+  private BigInteger totalPrice = BigInteger.ZERO;
 
   public Order() {}
 
   public Order(
       UUID id,
-      User client,
+      Client client,
       LocalDateTime orderDate,
       OrderStatus status,
-      List<OrderItem> orderItems) {
+      List<OrderItem> orderItems,
+      BigInteger totalPrice) {
     this.id = id;
     this.client = client;
     this.orderDate = orderDate;
     this.status = status;
     this.orderItems = orderItems;
+    this.totalPrice = totalPrice;
   }
 
   public UUID getId() {
@@ -37,11 +41,11 @@ public class Order {
     this.id = id;
   }
 
-  public User getClient() {
+  public Client getClient() {
     return client;
   }
 
-  public void setClient(User client) {
+  public void setClient(Client client) {
     this.client = client;
   }
 
@@ -91,5 +95,13 @@ public class Order {
     result = 31 * result + (status != null ? status.hashCode() : 0);
     result = 31 * result + (orderItems != null ? orderItems.hashCode() : 0);
     return result;
+  }
+
+  public BigInteger getTotalPrice() {
+    return totalPrice;
+  }
+
+  public void setTotalPrice(BigInteger totalPrice) {
+    this.totalPrice = totalPrice;
   }
 }
