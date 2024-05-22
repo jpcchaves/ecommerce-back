@@ -1,9 +1,10 @@
 package br.com.jpcchaves.core.model;
 
 import br.com.jpcchaves.core.model.Enum.ClientStatus;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Client {
+public class Client extends Auditable<Long> {
   private Long id;
   private User user;
   private String fullName;
@@ -15,6 +16,44 @@ public class Client {
 
   public Client(
       Long id, User user, String fullName, String contact, String address, ClientStatus status) {
+    this.id = id;
+    this.user = user;
+    this.fullName = fullName;
+    this.contact = contact;
+    this.address = address;
+    this.status = status;
+  }
+
+  public Client(
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      Long id,
+      User user,
+      String fullName,
+      String contact,
+      String address,
+      ClientStatus status) {
+    super(createdDate, lastModifiedDate);
+    this.id = id;
+    this.user = user;
+    this.fullName = fullName;
+    this.contact = contact;
+    this.address = address;
+    this.status = status;
+  }
+
+  public Client(
+      Long createdBy,
+      Long lastModifiedBy,
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      Long id,
+      User user,
+      String fullName,
+      String contact,
+      String address,
+      ClientStatus status) {
+    super(createdBy, lastModifiedBy, createdDate, lastModifiedDate);
     this.id = id;
     this.user = user;
     this.fullName = fullName;
