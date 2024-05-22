@@ -6,6 +6,7 @@ public enum ExceptionDefinition {
   USR0003("The password must contain 8 or more characters", "USR-0003", HttpStatus.BAD_REQUEST.value()),
   USR0004("User cannot be null!", "USR-0004", HttpStatus.BAD_REQUEST.value()),
   GEN0001("Empty or invalid email!", "GEN-0001", HttpStatus.BAD_REQUEST.value()),
+  GEN0002("The field %s cannot be empty or null", "GEN-0002", HttpStatus.BAD_REQUEST.value()),
   ROL0001("The role name cannot be empty or null!", "GEN-0001", HttpStatus.BAD_REQUEST.value());
 
   private final String message;
@@ -28,5 +29,9 @@ public enum ExceptionDefinition {
 
   public int getHttpStatus() {
     return httpStatus;
+  }
+
+  public static String notNullErrorMessage(String fieldName) {
+    return String.format(GEN0002.message, fieldName);
   }
 }
