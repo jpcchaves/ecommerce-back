@@ -11,7 +11,7 @@ public class Order {
   private UUID id;
   private User client;
   private LocalDateTime orderDate;
-  private OrderStatus status;
+  private OrderStatus status = OrderStatus.PENDING;
   private List<OrderItem> orderItems = new ArrayList<>();
 
   public Order() {
