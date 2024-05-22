@@ -11,13 +11,16 @@ public class Order {
   private UUID id;
   private User client;
   private LocalDateTime orderDate;
-  private OrderStatus status = OrderStatus.PENDING;
+  private OrderStatus status = OrderStatus.RECEIVED;
   private List<OrderItem> orderItems = new ArrayList<>();
 
-  public Order() {
-  }
+  public Order() {}
 
-  public Order(UUID id, User client, LocalDateTime orderDate, OrderStatus status,
+  public Order(
+      UUID id,
+      User client,
+      LocalDateTime orderDate,
+      OrderStatus status,
       List<OrderItem> orderItems) {
     this.id = id;
     this.client = client;
@@ -68,21 +71,15 @@ public class Order {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
     Order order = (Order) o;
 
-    if (!id.equals(order.id))
-      return false;
-    if (!Objects.equals(client, order.client))
-      return false;
-    if (!Objects.equals(orderDate, order.orderDate))
-      return false;
-    if (status != order.status)
-      return false;
+    if (!id.equals(order.id)) return false;
+    if (!Objects.equals(client, order.client)) return false;
+    if (!Objects.equals(orderDate, order.orderDate)) return false;
+    if (status != order.status) return false;
     return Objects.equals(orderItems, order.orderItems);
   }
 
