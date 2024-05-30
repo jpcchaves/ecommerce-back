@@ -11,7 +11,6 @@ public class Product extends Auditable<Long> {
   private String description;
   private String shortDescription;
   private BigDecimal price;
-  private ProductCategory category;
   private Integer stock;
 
   public Product() {}
@@ -29,7 +28,6 @@ public class Product extends Auditable<Long> {
     this.description = description;
     this.shortDescription = shortDescription;
     this.price = price;
-    this.category = category;
     this.stock = stock;
   }
 
@@ -49,7 +47,6 @@ public class Product extends Auditable<Long> {
     this.description = description;
     this.shortDescription = shortDescription;
     this.price = price;
-    this.category = category;
     this.stock = stock;
   }
 
@@ -71,7 +68,6 @@ public class Product extends Auditable<Long> {
     this.description = description;
     this.shortDescription = shortDescription;
     this.price = price;
-    this.category = category;
     this.stock = stock;
   }
 
@@ -115,14 +111,6 @@ public class Product extends Auditable<Long> {
     this.price = price;
   }
 
-  public ProductCategory getCategory() {
-    return category;
-  }
-
-  public void setCategory(ProductCategory category) {
-    this.category = category;
-  }
-
   public Integer getStock() {
     return stock;
   }
@@ -143,7 +131,6 @@ public class Product extends Auditable<Long> {
     if (!Objects.equals(description, product.description)) return false;
     if (!Objects.equals(shortDescription, product.shortDescription)) return false;
     if (!Objects.equals(price, product.price)) return false;
-    if (!Objects.equals(category, product.category)) return false;
     return Objects.equals(stock, product.stock);
   }
 
@@ -154,7 +141,6 @@ public class Product extends Auditable<Long> {
     result = 31 * result + (description != null ? description.hashCode() : 0);
     result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
     result = 31 * result + (price != null ? price.hashCode() : 0);
-    result = 31 * result + (category != null ? category.hashCode() : 0);
     result = 31 * result + (stock != null ? stock.hashCode() : 0);
     return result;
   }
