@@ -7,7 +7,5 @@ public class ProductValidator implements Validator<Product> {
   public void validate(Product product) {
     ValidationUtil.notBlank(product.getName(), "name");
     ValidationUtil.notBlank(product.getDescription(), "description");
-
-
   }
 }

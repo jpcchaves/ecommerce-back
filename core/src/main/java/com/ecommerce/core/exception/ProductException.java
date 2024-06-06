@@ -1,6 +1,5 @@
 package com.ecommerce.core.exception;
 
-import com.ecommerce.core.exception.BaseException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
 
 public class ProductException extends BaseException {

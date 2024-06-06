@@ -17,7 +17,6 @@ public enum UserRole {
 
         return role;
       }
-
     }
 
     throw new IllegalArgumentException("");

@@ -12,8 +12,15 @@ public class User extends Auditable<Long> {
   private Role role;
   private boolean isActive;
 
-  public User(LocalDateTime createdDate, LocalDateTime lastModifiedDate, String username,
-      String email, String firstName, String lastName, String password, Role role,
+  public User(
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      String username,
+      String email,
+      String firstName,
+      String lastName,
+      String password,
+      Role role,
       boolean isActive) {
     super(createdDate, lastModifiedDate);
     this.username = username;
@@ -25,8 +32,16 @@ public class User extends Auditable<Long> {
     this.isActive = isActive;
   }
 
-  public User(LocalDateTime createdDate, LocalDateTime lastModifiedDate, Long id, String username,
-      String email, String firstName, String lastName, String password, Role role,
+  public User(
+      LocalDateTime createdDate,
+      LocalDateTime lastModifiedDate,
+      Long id,
+      String username,
+      String email,
+      String firstName,
+      String lastName,
+      String password,
+      Role role,
       boolean isActive) {
     super(createdDate, lastModifiedDate);
     this.id = id;
@@ -39,8 +54,15 @@ public class User extends Auditable<Long> {
     this.isActive = isActive;
   }
 
-  public User(Long id, String username, String email, String firstName, String lastName,
-      String password, Role role, boolean isActive) {
+  public User(
+      Long id,
+      String username,
+      String email,
+      String firstName,
+      String lastName,
+      String password,
+      Role role,
+      boolean isActive) {
     this.id = id;
     this.username = username;
     this.email = email;
