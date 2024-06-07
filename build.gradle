@@ -14,23 +14,3 @@ dependencies {
 
 test {
 }
-
-tasks.register('formatSource') {
-    doLast {
-        def findCommand = "find . -name '*.java' -type f -print"
-        def javaFiles = new ByteArrayOutputStream()
-
-        exec {
-            commandLine 'bash', '-c', findCommand
-            standardOutput = javaFiles
-        }
-
-        def fileList = javaFiles.toString().split('\n')
-
-        fileList.each { file ->
-            exec {
-                commandLine 'java', '-jar', './lib/google-java-format-1.22.0-all-deps.jar', '--replace', file
-            }
-        }
-    }
-}
