@@ -1,6 +1,7 @@
 package com.ecommerce.core.dto.auth;
 
 public class UserRegisterDTO {
+
   private String email;
   private String username;
   private String password;
@@ -11,12 +12,13 @@ public class UserRegisterDTO {
   public UserRegisterDTO() {}
 
   public UserRegisterDTO(
-      String email,
-      String username,
-      String password,
-      String confirmPassword,
-      String firstName,
-      String lastName) {
+    String email,
+    String username,
+    String password,
+    String confirmPassword,
+    String firstName,
+    String lastName
+  ) {
     this.email = email;
     this.username = username;
     this.password = password;

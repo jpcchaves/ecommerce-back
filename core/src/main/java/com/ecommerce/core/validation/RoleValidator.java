@@ -8,9 +8,7 @@ public class RoleValidator implements Validator<Role> {
 
   @Override
   public void validate(Role entity) {
-
     if (entity.getName().isBlank()) {
-
       throw new RoleException(ExceptionDefinition.ROL0001);
     }
   }

@@ -3,6 +3,7 @@ package com.ecommerce.core.model;
 import java.util.Objects;
 
 public class ProductCategory {
+
   private Long id;
   private String name;
 

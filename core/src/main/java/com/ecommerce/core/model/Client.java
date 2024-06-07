@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Client extends Auditable<Long> {
+
   private Long id;
   private User user;
   private String fullName;
@@ -15,7 +16,13 @@ public class Client extends Auditable<Long> {
   public Client() {}
 
   public Client(
-      Long id, User user, String fullName, String contact, String address, ClientStatus status) {
+    Long id,
+    User user,
+    String fullName,
+    String contact,
+    String address,
+    ClientStatus status
+  ) {
     this.id = id;
     this.user = user;
     this.fullName = fullName;
@@ -25,14 +32,15 @@ public class Client extends Auditable<Long> {
   }
 
   public Client(
-      LocalDateTime createdDate,
-      LocalDateTime lastModifiedDate,
-      Long id,
-      User user,
-      String fullName,
-      String contact,
-      String address,
-      ClientStatus status) {
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    Long id,
+    User user,
+    String fullName,
+    String contact,
+    String address,
+    ClientStatus status
+  ) {
     super(createdDate, lastModifiedDate);
     this.id = id;
     this.user = user;
@@ -43,16 +51,17 @@ public class Client extends Auditable<Long> {
   }
 
   public Client(
-      Long createdBy,
-      Long lastModifiedBy,
-      LocalDateTime createdDate,
-      LocalDateTime lastModifiedDate,
-      Long id,
-      User user,
-      String fullName,
-      String contact,
-      String address,
-      ClientStatus status) {
+    Long createdBy,
+    Long lastModifiedBy,
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    Long id,
+    User user,
+    String fullName,
+    String contact,
+    String address,
+    ClientStatus status
+  ) {
     super(createdBy, lastModifiedBy, createdDate, lastModifiedDate);
     this.id = id;
     this.user = user;

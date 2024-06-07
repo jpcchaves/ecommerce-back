@@ -1,6 +1,7 @@
 package com.ecommerce.core.dto.common;
 
 public class MessageResponseDTO {
+
   private String message;
 
   private MessageResponseDTO(String message) {

@@ -1,6 +1,7 @@
 package com.ecommerce.core.dto.auth;
 
 public class LoginRequestDTO {
+
   private String email;
   private String password;
 
@@ -29,6 +30,15 @@ public class LoginRequestDTO {
 
   @Override
   public String toString() {
-    return "LoginRequestDTO{" + "email='" + email + '\'' + ", password='" + password + '\'' + '}';
+    return (
+      "LoginRequestDTO{" +
+      "email='" +
+      email +
+      '\'' +
+      ", password='" +
+      password +
+      '\'' +
+      '}'
+    );
   }
 }

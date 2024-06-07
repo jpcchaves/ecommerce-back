@@ -3,6 +3,7 @@ package com.ecommerce.core.model;
 import java.time.LocalDateTime;
 
 public abstract class Auditable<PK> {
+
   protected PK createdBy;
   protected PK lastModifiedBy;
   protected LocalDateTime createdDate;
@@ -15,14 +16,22 @@ public abstract class Auditable<PK> {
     this.lastModifiedDate = lastModifiedDate;
   }
 
-  public Auditable(PK lastModifiedBy, LocalDateTime createdDate, LocalDateTime lastModifiedDate) {
+  public Auditable(
+    PK lastModifiedBy,
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate
+  ) {
     this.lastModifiedBy = lastModifiedBy;
     this.createdDate = createdDate;
     this.lastModifiedDate = lastModifiedDate;
   }
 
   public Auditable(
-      PK createdBy, PK lastModifiedBy, LocalDateTime createdDate, LocalDateTime lastModifiedDate) {
+    PK createdBy,
+    PK lastModifiedBy,
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate
+  ) {
     this.createdBy = createdBy;
     this.lastModifiedBy = lastModifiedBy;
     this.createdDate = createdDate;

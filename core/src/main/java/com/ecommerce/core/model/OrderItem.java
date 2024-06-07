@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class OrderItem {
+
   private Long id;
   private Order order;
   private Product product;
@@ -12,7 +13,13 @@ public class OrderItem {
 
   public OrderItem() {}
 
-  public OrderItem(Long id, Order order, Product product, Integer quantity, BigDecimal price) {
+  public OrderItem(
+    Long id,
+    Order order,
+    Product product,
+    Integer quantity,
+    BigDecimal price
+  ) {
     this.id = id;
     this.order = order;
     this.product = product;

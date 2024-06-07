@@ -5,6 +5,7 @@ import com.ecommerce.core.exception.enums.ExceptionDefinition;
 import com.ecommerce.core.model.User;
 
 public class UserValidator implements Validator<User> {
+
   private static final int MAX_LENGTH = 50;
   private static final int MIN_PASSWORD_LENGTH = 8;
 

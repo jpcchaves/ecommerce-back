@@ -81,7 +81,9 @@ public enum HttpStatus {
   public static HttpStatus valueOf(int statusCode) {
     HttpStatus status = resolve(statusCode);
     if (status == null) {
-      throw new IllegalArgumentException("No matching constant for [" + statusCode + "]");
+      throw new IllegalArgumentException(
+        "No matching constant for [" + statusCode + "]"
+      );
     } else {
       return status;
     }
