@@ -10,6 +10,17 @@ public class UserRegisterValidator implements Validator<User> {
 
   private static final int MAX_LENGTH = 50;
   private static final int MIN_PASSWORD_LENGTH = 8;
+  private static UserRegisterValidator INSTANCE;
+
+  private UserRegisterValidator() {}
+
+  public static UserRegisterValidator getInstance() {
+    if (INSTANCE == null) {
+      INSTANCE = new UserRegisterValidator();
+    }
+
+    return INSTANCE;
+  }
 
   @Override
   public void validate(User entity) {
