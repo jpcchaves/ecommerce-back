@@ -12,7 +12,7 @@ public class LoginValidator implements Validator<LoginRequestDTO> {
     String email = entity.getEmail();
     String password = entity.getPassword();
 
-    if (!EmailValidator.isValid(email)) {
+    if (!ValidationUtil.isEmailValid(email)) {
       throw new BadRequestException(ExceptionDefinition.GEN0001);
     }
 

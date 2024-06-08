@@ -14,4 +14,8 @@ public class ValidationUtil {
       );
     }
   }
+
+  public static boolean isEmailValid(String email) {
+    return EmailValidator.isValid(email);
+  }
 }
