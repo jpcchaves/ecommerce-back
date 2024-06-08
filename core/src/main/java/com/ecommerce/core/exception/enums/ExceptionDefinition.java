@@ -32,9 +32,9 @@ public enum ExceptionDefinition {
     "VAL-0003",
     HttpStatus.BAD_REQUEST.value()
   ),
-  ROL0001(
+  VAL0004(
     "The role name cannot be empty or null!",
-    "GEN-0001",
+    "VAL-0004",
     HttpStatus.BAD_REQUEST.value()
   );
 
