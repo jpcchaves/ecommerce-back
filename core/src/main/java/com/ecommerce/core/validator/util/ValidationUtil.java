@@ -10,8 +10,8 @@ public class ValidationUtil {
     if (value == null || value.isBlank()) {
       throw new BadRequestException(
         ExceptionDefinition.notNullErrorMessage(fieldName),
-        ExceptionDefinition.GEN0002.getCode(),
-        ExceptionDefinition.GEN0002.getHttpStatus()
+        ExceptionDefinition.VAL0002.getCode(),
+        ExceptionDefinition.VAL0002.getHttpStatus()
       );
     }
   }

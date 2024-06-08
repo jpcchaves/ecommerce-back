@@ -28,7 +28,7 @@ public class UserRegisterValidator implements Validator<User> {
     validateMaxLength(entity.getLastName(), MAX_LENGTH);
 
     if (!EmailValidatorHelper.isValid(entity.getEmail())) {
-      throw new UserException(ExceptionDefinition.GEN0001);
+      throw new UserException(ExceptionDefinition.VAL0001);
     }
 
     if (entity.getPassword().length() < MIN_PASSWORD_LENGTH) {

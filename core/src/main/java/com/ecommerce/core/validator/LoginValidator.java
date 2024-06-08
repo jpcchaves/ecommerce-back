@@ -14,19 +14,19 @@ public class LoginValidator implements Validator<LoginRequestDTO> {
     String password = entity.getPassword();
 
     if (!ValidationUtil.isEmailValid(email)) {
-      throw new BadRequestException(ExceptionDefinition.GEN0001);
+      throw new BadRequestException(ExceptionDefinition.VAL0001);
     }
 
     if (password.isBlank()) {
       throw new BadRequestException(
         ExceptionDefinition.notNullErrorMessage("password"),
-        "GEN-0002",
+        "VAL-0002",
         HttpStatus.BAD_REQUEST.value()
       );
     }
 
     if (password.length() <= 8) {
-      throw new BadRequestException(ExceptionDefinition.GEN0003);
+      throw new BadRequestException(ExceptionDefinition.VAL0003);
     }
   }
 }
