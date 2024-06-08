@@ -3,6 +3,7 @@ package com.ecommerce.core.dto.auth;
 import com.ecommerce.core.dto.user.UserMinDTO;
 
 public class LoginResponseDTO {
+
   private String token;
   private UserMinDTO user;
 

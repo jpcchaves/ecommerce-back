@@ -1,6 +1,7 @@
 package com.ecommerce.core.dto.user;
 
 public class UserMinDTO {
+
   private Long id;
   private String email;
   private String name;
