@@ -18,9 +18,10 @@ public class LoginValidator implements Validator<LoginRequestDTO> {
 
     if (password.isBlank()) {
       throw new BadRequestException(
-          ExceptionDefinition.notNullErrorMessage("password"),
-          "GEN-0002",
-          HttpStatus.BAD_REQUEST.value());
+        ExceptionDefinition.notNullErrorMessage("password"),
+        "GEN-0002",
+        HttpStatus.BAD_REQUEST.value()
+      );
     }
 
     if (password.length() <= 8) {
