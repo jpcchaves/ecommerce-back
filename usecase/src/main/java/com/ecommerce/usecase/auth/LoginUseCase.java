@@ -1,8 +1,8 @@
 package com.ecommerce.usecase.auth;
 
 import com.ecommerce.core.dto.auth.LoginRequestDTO;
-import com.ecommerce.core.dto.common.MessageResponseDTO;
+import com.ecommerce.core.dto.auth.LoginResponseDTO;
 
 public interface LoginUseCase {
-  MessageResponseDTO login(LoginRequestDTO request);
+  LoginResponseDTO login(LoginRequestDTO request);
 }
