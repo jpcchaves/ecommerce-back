@@ -6,7 +6,7 @@ import com.ecommerce.core.model.User;
 import com.ecommerce.core.validator.util.ValidationUtil;
 import com.ecommerce.core.validator.util.helper.EmailValidatorHelper;
 
-public class UserValidator implements Validator<User> {
+public class UserRegisterValidator implements Validator<User> {
 
   private static final int MAX_LENGTH = 50;
   private static final int MIN_PASSWORD_LENGTH = 8;
