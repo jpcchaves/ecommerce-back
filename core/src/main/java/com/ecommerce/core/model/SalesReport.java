@@ -3,6 +3,7 @@ package com.ecommerce.core.model;
 import java.util.Date;
 
 public class SalesReport {
+
   private Long id;
   private Date startDate;
   private Date endDate;
@@ -11,7 +12,13 @@ public class SalesReport {
 
   public SalesReport() {}
 
-  public SalesReport(Long id, Date startDate, Date endDate, int productsSold, String filePath) {
+  public SalesReport(
+    Long id,
+    Date startDate,
+    Date endDate,
+    int productsSold,
+    String filePath
+  ) {
     this.id = id;
     this.startDate = startDate;
     this.endDate = endDate;

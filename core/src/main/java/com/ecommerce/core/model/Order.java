@@ -9,6 +9,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Order {
+
   private UUID id;
   private Client client;
   private OrderStatus status = OrderStatus.RECEIVED;
@@ -19,12 +20,13 @@ public class Order {
   public Order() {}
 
   public Order(
-      UUID id,
-      Client client,
-      LocalDateTime orderDate,
-      OrderStatus status,
-      List<OrderItem> orderItems,
-      BigInteger totalPrice) {
+    UUID id,
+    Client client,
+    LocalDateTime orderDate,
+    OrderStatus status,
+    List<OrderItem> orderItems,
+    BigInteger totalPrice
+  ) {
     this.id = id;
     this.client = client;
     this.orderDate = orderDate;

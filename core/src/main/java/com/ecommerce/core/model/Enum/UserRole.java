@@ -12,12 +12,9 @@ public enum UserRole {
 
   public String fromString(String role) {
     for (UserRole userRole : values()) {
-
       if (userRole.role.equals(role)) {
-
         return role;
       }
-
     }
 
     throw new IllegalArgumentException("");

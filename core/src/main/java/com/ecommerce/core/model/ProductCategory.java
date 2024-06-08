@@ -3,11 +3,11 @@ package com.ecommerce.core.model;
 import java.util.Objects;
 
 public class ProductCategory {
+
   private Long id;
   private String name;
 
-  public ProductCategory() {
-  }
+  public ProductCategory() {}
 
   public ProductCategory(Long id, String name) {
     this.id = id;
@@ -32,15 +32,12 @@ public class ProductCategory {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
     ProductCategory that = (ProductCategory) o;
 
-    if (!id.equals(that.id))
-      return false;
+    if (!id.equals(that.id)) return false;
     return Objects.equals(name, that.name);
   }
 

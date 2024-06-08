@@ -3,6 +3,7 @@ package com.ecommerce.core.model;
 import java.time.LocalDateTime;
 
 public class User extends Auditable<Long> {
+
   private Long id;
   private String username;
   private String email;
@@ -12,9 +13,17 @@ public class User extends Auditable<Long> {
   private Role role;
   private boolean isActive;
 
-  public User(LocalDateTime createdDate, LocalDateTime lastModifiedDate, String username,
-      String email, String firstName, String lastName, String password, Role role,
-      boolean isActive) {
+  public User(
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    String username,
+    String email,
+    String firstName,
+    String lastName,
+    String password,
+    Role role,
+    boolean isActive
+  ) {
     super(createdDate, lastModifiedDate);
     this.username = username;
     this.email = email;
@@ -25,9 +34,18 @@ public class User extends Auditable<Long> {
     this.isActive = isActive;
   }
 
-  public User(LocalDateTime createdDate, LocalDateTime lastModifiedDate, Long id, String username,
-      String email, String firstName, String lastName, String password, Role role,
-      boolean isActive) {
+  public User(
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    Long id,
+    String username,
+    String email,
+    String firstName,
+    String lastName,
+    String password,
+    Role role,
+    boolean isActive
+  ) {
     super(createdDate, lastModifiedDate);
     this.id = id;
     this.username = username;
@@ -39,8 +57,16 @@ public class User extends Auditable<Long> {
     this.isActive = isActive;
   }
 
-  public User(Long id, String username, String email, String firstName, String lastName,
-      String password, Role role, boolean isActive) {
+  public User(
+    Long id,
+    String username,
+    String email,
+    String firstName,
+    String lastName,
+    String password,
+    Role role,
+    boolean isActive
+  ) {
     this.id = id;
     this.username = username;
     this.email = email;

@@ -6,6 +6,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Product extends Auditable<Long> {
+
   private UUID id;
   private String name;
   private String description;
@@ -16,13 +17,14 @@ public class Product extends Auditable<Long> {
   public Product() {}
 
   public Product(
-      UUID id,
-      String name,
-      String description,
-      String shortDescription,
-      BigDecimal price,
-      ProductCategory category,
-      Integer stock) {
+    UUID id,
+    String name,
+    String description,
+    String shortDescription,
+    BigDecimal price,
+    ProductCategory category,
+    Integer stock
+  ) {
     this.id = id;
     this.name = name;
     this.description = description;
@@ -32,15 +34,16 @@ public class Product extends Auditable<Long> {
   }
 
   public Product(
-      LocalDateTime createdDate,
-      LocalDateTime lastModifiedDate,
-      UUID id,
-      String name,
-      String description,
-      String shortDescription,
-      BigDecimal price,
-      ProductCategory category,
-      Integer stock) {
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    UUID id,
+    String name,
+    String description,
+    String shortDescription,
+    BigDecimal price,
+    ProductCategory category,
+    Integer stock
+  ) {
     super(createdDate, lastModifiedDate);
     this.id = id;
     this.name = name;
@@ -51,17 +54,18 @@ public class Product extends Auditable<Long> {
   }
 
   public Product(
-      Long createdBy,
-      Long lastModifiedBy,
-      LocalDateTime createdDate,
-      LocalDateTime lastModifiedDate,
-      UUID id,
-      String name,
-      String description,
-      String shortDescription,
-      BigDecimal price,
-      ProductCategory category,
-      Integer stock) {
+    Long createdBy,
+    Long lastModifiedBy,
+    LocalDateTime createdDate,
+    LocalDateTime lastModifiedDate,
+    UUID id,
+    String name,
+    String description,
+    String shortDescription,
+    BigDecimal price,
+    ProductCategory category,
+    Integer stock
+  ) {
     super(createdBy, lastModifiedBy, createdDate, lastModifiedDate);
     this.id = id;
     this.name = name;
@@ -129,7 +133,9 @@ public class Product extends Auditable<Long> {
     if (!id.equals(product.id)) return false;
     if (!Objects.equals(name, product.name)) return false;
     if (!Objects.equals(description, product.description)) return false;
-    if (!Objects.equals(shortDescription, product.shortDescription)) return false;
+    if (
+      !Objects.equals(shortDescription, product.shortDescription)
+    ) return false;
     if (!Objects.equals(price, product.price)) return false;
     return Objects.equals(stock, product.stock);
   }
@@ -139,7 +145,8 @@ public class Product extends Auditable<Long> {
     int result = id.hashCode();
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (description != null ? description.hashCode() : 0);
-    result = 31 * result + (shortDescription != null ? shortDescription.hashCode() : 0);
+    result = 31 * result +
+    (shortDescription != null ? shortDescription.hashCode() : 0);
     result = 31 * result + (price != null ? price.hashCode() : 0);
     result = 31 * result + (stock != null ? stock.hashCode() : 0);
     return result;

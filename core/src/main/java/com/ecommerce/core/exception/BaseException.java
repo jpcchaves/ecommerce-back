@@ -3,6 +3,7 @@ package com.ecommerce.core.exception;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
 
 public abstract class BaseException extends RuntimeException {
+
   private final String code;
   private final int httpStatus;
 
