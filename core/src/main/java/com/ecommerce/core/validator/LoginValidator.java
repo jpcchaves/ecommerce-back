@@ -8,7 +8,7 @@ import com.ecommerce.core.validator.util.ValidationUtil;
 
 public class LoginValidator implements Validator<LoginRequestDTO> {
 
-  private static LoginValidator INSTANCE = new LoginValidator();
+  private static LoginValidator INSTANCE;
 
   private LoginValidator() {}
 

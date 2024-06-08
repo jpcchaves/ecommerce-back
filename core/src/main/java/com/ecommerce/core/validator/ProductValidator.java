@@ -5,7 +5,7 @@ import com.ecommerce.core.validator.util.ValidationUtil;
 
 public class ProductValidator implements Validator<Product> {
 
-  private static ProductValidator INSTANCE = new ProductValidator();
+  private static ProductValidator INSTANCE;
 
   private ProductValidator() {}
 
