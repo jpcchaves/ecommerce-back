@@ -10,6 +10,8 @@ public class LoginValidator implements Validator<LoginRequestDTO> {
 
   private static LoginValidator INSTANCE = new LoginValidator();
 
+  private LoginValidator() {}
+
   public static LoginValidator getInstance() {
     if (INSTANCE == null) {
       INSTANCE = new LoginValidator();
