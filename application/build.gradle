@@ -10,6 +10,8 @@ repositories {
 }
 
 dependencies {
+    implementation project(path: ":core")
+    implementation project(path: ":usecase")
 }
 
 test {
