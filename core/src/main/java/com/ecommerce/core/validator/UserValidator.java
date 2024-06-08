@@ -1,8 +1,10 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 import com.ecommerce.core.exception.UserException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
 import com.ecommerce.core.model.User;
+import com.ecommerce.core.validator.util.ValidationUtil;
+import com.ecommerce.core.validator.util.helper.EmailValidatorHelper;
 
 public class UserValidator implements Validator<User> {
 
@@ -25,7 +27,7 @@ public class UserValidator implements Validator<User> {
     validateMaxLength(entity.getFirstName(), MAX_LENGTH);
     validateMaxLength(entity.getLastName(), MAX_LENGTH);
 
-    if (!EmailValidator.isValid(entity.getEmail())) {
+    if (!EmailValidatorHelper.isValid(entity.getEmail())) {
       throw new UserException(ExceptionDefinition.GEN0001);
     }
 

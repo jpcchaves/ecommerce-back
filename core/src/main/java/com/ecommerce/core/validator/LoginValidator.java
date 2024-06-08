@@ -1,9 +1,10 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 import com.ecommerce.core.dto.auth.LoginRequestDTO;
 import com.ecommerce.core.exception.BadRequestException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
 import com.ecommerce.core.exception.enums.HttpStatus;
+import com.ecommerce.core.validator.util.ValidationUtil;
 
 public class LoginValidator implements Validator<LoginRequestDTO> {
 

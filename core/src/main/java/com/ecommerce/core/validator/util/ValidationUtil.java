@@ -1,7 +1,8 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator.util;
 
 import com.ecommerce.core.exception.BadRequestException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
+import com.ecommerce.core.validator.util.helper.EmailValidatorHelper;
 
 public class ValidationUtil {
 
@@ -16,6 +17,6 @@ public class ValidationUtil {
   }
 
   public static boolean isEmailValid(String email) {
-    return EmailValidator.isValid(email);
+    return EmailValidatorHelper.isValid(email);
   }
 }

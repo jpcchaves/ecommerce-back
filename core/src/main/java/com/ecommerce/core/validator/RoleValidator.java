@@ -1,4 +1,4 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 import com.ecommerce.core.exception.RoleException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;

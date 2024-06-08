@@ -1,6 +1,7 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 import com.ecommerce.core.model.Product;
+import com.ecommerce.core.validator.util.ValidationUtil;
 
 public class ProductValidator implements Validator<Product> {
 
