@@ -8,6 +8,16 @@ import com.ecommerce.core.validator.util.ValidationUtil;
 
 public class LoginValidator implements Validator<LoginRequestDTO> {
 
+  private static LoginValidator INSTANCE = new LoginValidator();
+
+  public static LoginValidator getInstance() {
+    if (INSTANCE == null) {
+      INSTANCE = new LoginValidator();
+    }
+
+    return INSTANCE;
+  }
+
   @Override
   public void validate(LoginRequestDTO entity) {
     String email = entity.getEmail();
