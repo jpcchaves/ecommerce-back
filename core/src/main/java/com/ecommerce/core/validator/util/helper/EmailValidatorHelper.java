@@ -1,9 +1,9 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator.util.helper;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailValidator {
+public class EmailValidatorHelper {
 
   private static final String EMAIL_PATTERN =
     "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@" +

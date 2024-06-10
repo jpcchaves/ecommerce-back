@@ -1,13 +1,26 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 import com.ecommerce.core.exception.UserException;
 import com.ecommerce.core.exception.enums.ExceptionDefinition;
 import com.ecommerce.core.model.User;
+import com.ecommerce.core.validator.util.ValidationUtil;
+import com.ecommerce.core.validator.util.helper.EmailValidatorHelper;
 
-public class UserValidator implements Validator<User> {
+public class UserRegisterValidator implements Validator<User> {
 
   private static final int MAX_LENGTH = 50;
   private static final int MIN_PASSWORD_LENGTH = 8;
+  private static UserRegisterValidator INSTANCE;
+
+  private UserRegisterValidator() {}
+
+  public static UserRegisterValidator getInstance() {
+    if (INSTANCE == null) {
+      INSTANCE = new UserRegisterValidator();
+    }
+
+    return INSTANCE;
+  }
 
   @Override
   public void validate(User entity) {
@@ -25,8 +38,8 @@ public class UserValidator implements Validator<User> {
     validateMaxLength(entity.getFirstName(), MAX_LENGTH);
     validateMaxLength(entity.getLastName(), MAX_LENGTH);
 
-    if (!EmailValidator.isValid(entity.getEmail())) {
-      throw new UserException(ExceptionDefinition.GEN0001);
+    if (!EmailValidatorHelper.isValid(entity.getEmail())) {
+      throw new UserException(ExceptionDefinition.VAL0001);
     }
 
     if (entity.getPassword().length() < MIN_PASSWORD_LENGTH) {

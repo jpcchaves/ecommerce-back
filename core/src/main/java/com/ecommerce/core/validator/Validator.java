@@ -1,4 +1,4 @@
-package com.ecommerce.core.validation;
+package com.ecommerce.core.validator;
 
 @FunctionalInterface
 public interface Validator<T> {
